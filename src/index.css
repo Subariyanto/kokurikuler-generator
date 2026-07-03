@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@media print {
+  .no-print { display: none !important; }
+  .print-only { display: block !important; }
+  body { background: white !important; }
+  .sidebar, header, button, .print-hide { display: none !important; }
+  @page { size: A4 portrait; margin: 20mm; }
+  table { page-break-inside: avoid; }
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+
+.sidebar { transition: transform 0.3s ease; }
+.sidebar.open { transform: translateX(0); }
+
+@media (max-width: 768px) {
+  .sidebar { transform: translateX(-100%); position: fixed; z-index: 50; height: 100vh; }
+  .sidebar.open { transform: translateX(0); }
+}
+
+.print-area {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+}
+
+.print-area h2 { font-size: 16pt; font-weight: bold; margin: 16px 0 8px; }
+.print-area h3 { font-size: 13pt; font-weight: bold; margin: 12px 0 6px; }
+.print-area p { margin: 4px 0; font-size: 11pt; }
+.print-area table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+.print-area table th, .print-area table td { border: 1px solid #333; padding: 6px 8px; font-size: 10pt; }
+.print-area table th { background: #f0fdf4; font-weight: bold; }
