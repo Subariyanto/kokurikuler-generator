@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS profiles (
   nama_lengkap TEXT NOT NULL,
   username TEXT UNIQUE NOT NULL,
   password_hash TEXT NOT NULL,
-  role TEXT NOT NULL CHECK (role IN ('Admin', 'Kepala Madrasah', 'Koordinator Kokurikuler', 'Guru', 'Pengawas')),
+  role TEXT NOT NULL CHECK (role IN ('Admin', 'Koordinator Kokurikuler')),
   nama_madrasah TEXT,
   nomor_hp TEXT,
   email TEXT,
